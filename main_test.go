@@ -55,7 +55,7 @@ func TestCafeWhenOk(t *testing.T) {
 // TestCafeSearch проверяет, что параметр search возвращает только те кафе,
 // в названии которых содержится указанная подстрока (без учёта регистра).
 func TestCafeSearch(t *testing.T) {
-	server := httptest.NewServer(http.HandlerFunc(cafeHandler))
+	server := httptest.NewServer(http.HandlerFunc(mainHandle))
 	defer server.Close()
 
 	requests := []struct {
@@ -103,7 +103,7 @@ func TestCafeSearch(t *testing.T) {
 // TestCafeCount проверяет, что параметр count корректно ограничивает
 // количество возвращаемых кафе.
 func TestCafeCount(t *testing.T) {
-	server := httptest.NewServer(http.HandlerFunc(cafeHandler))
+	server := httptest.NewServer(http.HandlerFunc(mainHandle))
 	defer server.Close()
 
 	city := "moscow"

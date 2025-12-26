@@ -83,7 +83,7 @@ func TestCafeSearch(t *testing.T) {
 
 		var cafes []string
 		if result != "" {
-			cafes = strings.Split(result, ", ")
+			cafes = strings.Split(result, ",")
 		}
 
 		assert.Equal(t, tt.wantCount, len(cafes))
@@ -129,7 +129,7 @@ func TestCafeCount(t *testing.T) {
 
 		var cafes []string
 		if result != "" {
-			cafes = strings.Split(result, ", ")
+			cafes = strings.Split(result, ",")
 		}
 
 		assert.Equal(t, tt.want, len(cafes))
